@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "ec64676d-a5ad-49c3-bf10-6eb55dfe8bf1",
+		"name": "Quivato",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6688496"
+	},
+	"item": [
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "add review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n    \"review\": \"I am very satisfied with the work on the Nexus team. Good service, satisfying work results, and can also increase my business turnover. Thank you so much to the Quivato team.\",\n    \"reviewer_name\": \"John Richard\",\n    \"reviewer_designation\": \"Businessman\"\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Web Development/Easy learning platform/assets/categories/bcs.png"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_server}}/reviews",
+							"host": [
+								"{{local_server}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_server}}/reviews",
+							"host": [
+								"{{local_server}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single review",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local_server}}/reviews/664ce0b60e8ae64f763be661",
+							"host": [
+								"{{local_server}}"
+							],
+							"path": [
+								"reviews",
+								"664ce0b60e8ae64f763be661"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update review",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{    \"reviewer_designation\": \"Businessman 1\"\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Web Development/Easy learning platform/assets/categories/bank.jpg"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_server}}/reviews/664ce0b60e8ae64f763be661",
+							"host": [
+								"{{local_server}}"
+							],
+							"path": [
+								"reviews",
+								"664ce0b60e8ae64f763be661"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"1234564\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_server}}/reviews/664ce7c045d5848bc0c7a803",
+							"host": [
+								"{{local_server}}"
+							],
+							"path": [
+								"reviews",
+								"664ce7c045d5848bc0c7a803"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local_server",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
