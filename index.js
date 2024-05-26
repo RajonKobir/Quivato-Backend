@@ -34,7 +34,7 @@ const upload = multer({
 async function run() {
   try {
     await client.connect();
-    const reviewCollection = client.db("quivato").collection("reviews");
+    const reviewCollection = client.db(process.env.MONGODB_NAME).collection(process.env.MONGODB_COLLECTION_NAME);
 
     app.get("/", (req, res) => {
       res.send("Server is running");
